@@ -1,0 +1,27 @@
+﻿CREATE TABLE [dbo].[KaizenItems] (
+    [ID]                 INT            IDENTITY (1, 1) NOT NULL,
+    [userId]             INT            NOT NULL,
+    [kaizenItemParentId] INT            NULL,
+    [title]              VARCHAR (MAX)  NOT NULL,
+    [description]        VARCHAR (MAX)  NOT NULL,
+    [enabled]            BIT            CONSTRAINT [DF_KaizenItems_enabled] DEFAULT ('true') NOT NULL,
+    [visible]            BIT            CONSTRAINT [DF_KaizenItems_visible] DEFAULT ('true') NOT NULL,
+    [category1]          INT            NOT NULL,
+    [category2]          INT            NOT NULL,
+    [date]               SMALLDATETIME  CONSTRAINT [DF_KaizenItems_date] DEFAULT (getdate()) NOT NULL,
+    [why1]               NVARCHAR (MAX) NULL,
+    [why2]               NVARCHAR (MAX) NULL,
+    [why3]               NVARCHAR (MAX) NULL,
+    [why4]               NVARCHAR (MAX) NULL,
+    [why5]               NVARCHAR (MAX) NULL,
+    [what1]              NVARCHAR (MAX) NULL,
+    [what2]              NVARCHAR (MAX) NULL,
+    [how]                NVARCHAR (MAX) NULL,
+    [attachments]        VARCHAR (MAX)  NULL,
+    CONSTRAINT [PK_KaizenItems] PRIMARY KEY CLUSTERED ([ID] ASC),
+    CONSTRAINT [FK_KaizenItems_KaizenItems] FOREIGN KEY ([kaizenItemParentId]) REFERENCES [dbo].[KaizenItems] ([ID]),
+    CONSTRAINT [FK_KaizenItems_KaizenSecondCat] FOREIGN KEY ([category2]) REFERENCES [dbo].[KaizenSecondCat] ([KaizenSecondCatID]),
+    CONSTRAINT [FK_KaizenItems_KaizenTopCat] FOREIGN KEY ([category1]) REFERENCES [dbo].[KaizenTopCat] ([KaizenTopCatID]),
+    CONSTRAINT [FK_KaizenItems_Users] FOREIGN KEY ([userId]) REFERENCES [dbo].[Users] ([UserID])
+);
+

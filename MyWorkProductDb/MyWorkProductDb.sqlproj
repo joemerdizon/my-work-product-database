@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <Name>MyWorkProductDb</Name>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>4.1</ProjectVersion>
+    <ProjectGuid>{7b24077e-8c13-4766-ad71-3cf87a6d6c00}</ProjectGuid>
+    <DSP>Microsoft.Data.Tools.Schema.Sql.Sql130DatabaseSchemaProvider</DSP>
+    <OutputType>Database</OutputType>
+    <RootPath>
+    </RootPath>
+    <RootNamespace>MyWorkProductDb</RootNamespace>
+    <AssemblyName>MyWorkProductDb</AssemblyName>
+    <ModelCollation>1033,CI</ModelCollation>
+    <DefaultFileStructure>BySchemaAndSchemaType</DefaultFileStructure>
+    <DeployToDatabase>True</DeployToDatabase>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetLanguage>CS</TargetLanguage>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <SqlServerVerification>False</SqlServerVerification>
+    <IncludeCompositeObjects>True</IncludeCompositeObjects>
+    <TargetDatabaseSet>True</TargetDatabaseSet>
+    <DefaultCollation>SQL_Latin1_General_CP1_CI_AS</DefaultCollation>
+    <DefaultFilegroup>PRIMARY</DefaultFilegroup>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <BuildScriptName>$(MSBuildProjectName).sql</BuildScriptName>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">11.0</VisualStudioVersion>
+    <!-- Default to the v11.0 targets path if the targets file for the current VS version is not found -->
+    <SSDTExists Condition="Exists('$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets')">True</SSDTExists>
+    <VisualStudioVersion Condition="'$(SSDTExists)' == ''">11.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Condition="'$(SQLDBExtensionsRefPath)' != ''" Project="$(SQLDBExtensionsRefPath)\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <Import Condition="'$(SQLDBExtensionsRefPath)' == ''" Project="$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\SSDT\Microsoft.Data.Tools.Schema.SqlTasks.targets" />
+  <ItemGroup>
+    <Folder Include="Properties" />
+    <Folder Include="dbo\" />
+    <Folder Include="dbo\Tables\" />
+    <Folder Include="dbo\Stored Procedures\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Build Include="dbo\Tables\Playbook.sql" />
+    <Build Include="dbo\Tables\PlaybookDocuments.sql" />
+    <Build Include="dbo\Tables\PlaybookFavorites.sql" />
+    <Build Include="dbo\Tables\PlaybookLinks.sql" />
+    <Build Include="dbo\Tables\PlaybookMaster.sql" />
+    <Build Include="dbo\Tables\PlaybookNew.sql" />
+    <Build Include="dbo\Tables\ProcessesMaster.sql" />
+    <Build Include="dbo\Tables\ProcessesSteps.sql" />
+    <Build Include="dbo\Tables\ProcessJobs.sql" />
+    <Build Include="dbo\Tables\ProductUpdates.sql" />
+    <Build Include="dbo\Tables\Providers.sql" />
+    <Build Include="dbo\Tables\ProviderStorageAccountType.sql" />
+    <Build Include="dbo\Tables\ReportDocLogs.sql" />
+    <Build Include="dbo\Tables\ReportTemplateAssignmentAssignees.sql" />
+    <Build Include="dbo\Tables\ReportTemplateAssignments.sql" />
+    <Build Include="dbo\Tables\ReportTemplateFavorites.sql" />
+    <Build Include="dbo\Tables\ReportTemplateLogs.sql" />
+    <Build Include="dbo\Tables\ReportTemplates.sql" />
+    <Build Include="dbo\Tables\ReportTemplateSections.sql" />
+    <Build Include="dbo\Tables\ResetAudits.sql" />
+    <Build Include="dbo\Tables\ResourceAvailStatuses.sql" />
+    <Build Include="dbo\Tables\Resources.sql" />
+    <Build Include="dbo\Tables\Roles.sql" />
+    <Build Include="dbo\Tables\ScheduleItems.sql" />
+    <Build Include="dbo\Tables\ScheduleItemsDetails.sql" />
+    <Build Include="dbo\Tables\SecretQuestions.sql" />
+    <Build Include="dbo\Tables\SiteLinks.sql" />
+    <Build Include="dbo\Tables\SiteNavigations.sql" />
+    <Build Include="dbo\Tables\SqueezeAggregate.sql" />
+    <Build Include="dbo\Tables\StorageAccountTypes.sql" />
+    <Build Include="dbo\Tables\TaskOwnerLookup.sql" />
+    <Build Include="dbo\Tables\ReportTemplateTasks.sql" />
+    <Build Include="dbo\Tables\TaskStatuses.sql" />
+    <Build Include="dbo\Tables\TaskType.sql" />
+    <Build Include="dbo\Tables\TeamFavorites.sql" />
+    <Build Include="dbo\Tables\TeamMembers.sql" />
+    <Build Include="dbo\Tables\Teams.sql" />
+    <Build Include="dbo\Tables\TemplateTaskCategory.sql" />
+    <Build Include="dbo\Tables\ActionList.sql" />
+    <Build Include="dbo\Tables\TemplateTaskCategoryType.sql" />
+    <Build Include="dbo\Tables\AuditTrailMaster.sql" />
+    <Build Include="dbo\Tables\TemplateTasks.sql" />
+    <Build Include="dbo\Tables\CalendarEvents.sql" />
+    <Build Include="dbo\Tables\TemplateTaskNewFavorites.sql" />
+    <Build Include="dbo\Tables\ClientConfigEntities.sql" />
+    <Build Include="dbo\Tables\TemplateTaskPlaybookDocuments.sql" />
+    <Build Include="dbo\Tables\ClientConfiguration.sql" />
+    <Build Include="dbo\Tables\TemplateTaskResources.sql" />
+    <Build Include="dbo\Tables\ClientProviders.sql" />
+    <Build Include="dbo\Tables\Tip.sql" />
+    <Build Include="dbo\Tables\Clients.sql" />
+    <Build Include="dbo\Tables\UserAvailableStatus.sql" />
+    <Build Include="dbo\Tables\ClientTitles.sql" />
+    <Build Include="dbo\Tables\UserConfigurations.sql" />
+    <Build Include="dbo\Tables\ClientUserRoles.sql" />
+    <Build Include="dbo\Tables\UserDocumentPermissions.sql" />
+    <Build Include="dbo\Tables\DATABASECHANGELOG.sql" />
+    <Build Include="dbo\Tables\UserMessaging.sql" />
+    <Build Include="dbo\Tables\DATABASECHANGELOGLOCK.sql" />
+    <Build Include="dbo\Tables\UserPermissions.sql" />
+    <Build Include="dbo\Tables\DepartmentBranches.sql" />
+    <Build Include="dbo\Tables\UserProfileChangeTraces.sql" />
+    <Build Include="dbo\Tables\Departments.sql" />
+    <Build Include="dbo\Tables\Users.sql" />
+    <Build Include="dbo\Tables\Kaizen.sql" />
+    <Build Include="dbo\Tables\UserSecretAnswers.sql" />
+    <Build Include="dbo\Tables\KaizenConfig.sql" />
+    <Build Include="dbo\Tables\UsersManagers.sql" />
+    <Build Include="dbo\Tables\KaizenItems.sql" />
+    <Build Include="dbo\Tables\UserSqueeze.sql" />
+    <Build Include="dbo\Tables\KaizenSecondCat.sql" />
+    <Build Include="dbo\Tables\UserStorageAccountTypes.sql" />
+    <Build Include="dbo\Tables\KaizenTopCat.sql" />
+    <Build Include="dbo\Tables\UserTaskAdditionalOwners.sql" />
+    <Build Include="dbo\Tables\KaizenUserScoreAttempts.sql" />
+    <Build Include="dbo\Tables\UserTaskApprovalRequeriments.sql" />
+    <Build Include="dbo\Tables\KaizenVoteScore.sql" />
+    <Build Include="dbo\Tables\UserTaskComments.sql" />
+    <Build Include="dbo\Tables\Log.sql" />
+    <Build Include="dbo\Tables\MultiUserReports.sql" />
+    <Build Include="dbo\Tables\UserTaskDocuments.sql" />
+    <Build Include="dbo\Tables\NotificationGlobalSubscriptions.sql" />
+    <Build Include="dbo\Tables\UserTaskLastSeen.sql" />
+    <Build Include="dbo\Tables\NotificationItems.sql" />
+    <Build Include="dbo\Tables\UserTaskPlaybookDocuments.sql" />
+    <Build Include="dbo\Tables\NotificationLogDevices.sql" />
+    <Build Include="dbo\Tables\UserTaskResources.sql" />
+    <Build Include="dbo\Tables\NotificationLogs.sql" />
+    <Build Include="dbo\Tables\UserTasks.sql" />
+    <Build Include="dbo\Tables\NotificationMaster.sql" />
+    <Build Include="dbo\Tables\UserTaskTracer.sql" />
+    <Build Include="dbo\Tables\NotificationSuscriptions.sql" />
+    <Build Include="dbo\Tables\UserTitlePermissions.sql" />
+    <Build Include="dbo\Tables\OrganizationHierarchy.sql" />
+    <Build Include="dbo\Tables\UserTitles.sql" />
+    <Build Include="dbo\Tables\PasswordChangeRequest.sql" />
+    <Build Include="dbo\Tables\USStates.sql" />
+    <Build Include="dbo\Tables\Permissions.sql" />
+    <Build Include="dbo\Tables\VoteType.sql" />
+    <Build Include="dbo\Stored Procedures\CreateMenuItems.sql" />
+  </ItemGroup>
+</Project>
